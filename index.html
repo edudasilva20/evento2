@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dia do Hospital Invertido</title>
+  <style>
+    :root {
+      --bg: #f0faff;
+      --text: #2c3e50;
+      --card-bg: #ffffff;
+      --accent: #3498db;
+      --soft: #d6eaf8;
+      --highlight: #ecf9ff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121a21;
+      --text: #eaf6ff;
+      --card-bg: #1e2c35;
+      --accent: #5dade2;
+      --soft: #283c47;
+      --highlight: #19303f;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      transition: all 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.3em;
+      margin-bottom: 20px;
+    }
+
+    .toggle-theme {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--accent);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background: var(--highlight);
+    }
+
+    .floating-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .floating-bg span {
+      position: absolute;
+      font-size: 2em;
+      animation: float 10s linear infinite;
+      opacity: 0.1;
+    }
+
+    .floating-bg span:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
+    .floating-bg span:nth-child(2) { top: 50%; left: 80%; animation-duration: 14s; }
+    .floating-bg span:nth-child(3) { top: 70%; left: 10%; animation-duration: 16s; }
+    .floating-bg span:nth-child(4) { top: 30%; left: 60%; animation-duration: 10s; }
+    .floating-bg span:nth-child(5) { top: 80%; left: 40%; animation-duration: 18s; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100vh); }
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      background: var(--card-bg);
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: background 0.3s ease;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: var(--accent);
+      border-left: 6px solid var(--soft);
+      padding-left: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    .highlight {
+      background: var(--highlight);
+      border-left: 8px solid var(--accent);
+      border-radius: 12px;
+      padding: 25px;
+      font-size: 1.1em;
+      margin-top: 40px;
+    }
+
+    footer {
+      background: var(--accent);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1em;
+      position: relative;
+    }
+
+    footer::before {
+      content: "📛";
+      font-size: 3em;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.2;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <button class="toggle-theme" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">
+    🌓 Modo Escuro
+  </button>
+  <img src="logo.png" alt="Logo do evento" style="display: block; margin: 0 auto 20px; max-width: 120px;" />
+  <h1>🩺 Evento: Dia do Hospital Invertido</h1>
+  <p>"Hoje, quem cuida... precisa de cuidados!"</p>
+
+    <div class="floating-bg">
+      <span>🩺</span>
+      <span>📋</span>
+      <span>💊</span>
+      <span>➕</span>
+      <span>🩹</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>📅 Data e Local</h2>
+      <p><strong>Data:</strong> Quinta-feira, às 21:30h<br>
+      <strong>Local:</strong> Hospital de Vespucci</p>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Objetivo</h2>
+      <p>Transformar o hospital numa divertida inversão de papéis, onde os médicos se tornam pacientes e os civis assumem o papel de profissionais da saude. Um evento leve, interactivo e cheio de boas risadas!</p>
+    </div>
+
+    <div class="section">
+      <h2>🎭 Papéis e Dinâmica</h2>
+      <ul>
+        <li><strong>Médicos:</strong> fingem estar "doentes", com sintomas caricatos e fictícios.</li>
+        <li><strong>Civis/Voluntários:</strong> assumem os papéis de médicos e paramédicos por um dia.</li>
+        <li><strong>Supervisão:</strong> Profissional de saúde acompanha o evento.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🩹 Exemplos de "Doenças"</h2>
+      <ul>
+        <li>Esgotamento de salvar vidas</li>
+        <li>Vício em cafeína intravenosa</li>
+        <li>Lesão por excesso de diagnósticos</li>
+        <li>Síndrome de “só mais um turno”</li>
+        <li>Picada de paciente invisível</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🏆 Prémios e Surpresas</h2>
+      <ul>
+        <li>Melhor Médico Civil</li>
+        <li>Paciente Mais Dramático</li>
+        <li>Diagnóstico Mais Criativo</li>
+      </ul>
+    </div>
+
+    <div class="section highlight">
+      <h2>💬 Anúncio para Redes</h2>
+      <p><strong>🩺 O HOSPITAL CONVIDA A TODOS OS CIDADÃOS DE SAN ANDREAS AO DIA INVERTIDO</strong><br>
+      Já imaginaste cuidar de quem cuida de ti? Nesta quinta-feira, os nossos médicos serão pacientes e vocês serão os heróis da noite. Vem viver o hospital como nunca antes. Garantimos gargalhadas, diagnósticos absurdos e muita animação!</p>
+    </div>
+  </main>
+
+  <footer>
+    Organizado pelo Hospital de Vespucci 💙
+  </footer>
+</body>
+</html>
